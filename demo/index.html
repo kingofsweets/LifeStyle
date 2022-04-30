@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>The Visualizer demo</title>
+    </head>
+    <body>
+        <form method="POST" action="/segmentation" enctype="multipart/form-data">
+            <div>
+                <label for="init">Initial image</label>
+                <input type="file" id="init" name="init" />
+            </div>
+            <div>
+                <label for="texture">Texture</label>
+                <input type="file" id="texture" name="texture"/>
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </body>
+</html>
