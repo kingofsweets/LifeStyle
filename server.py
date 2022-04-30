@@ -18,7 +18,7 @@ def index():
 @app.route("/clothes", methods = ['GET', 'POST'])
 def test_api():
     if request.method == 'GET':
-        return "Image segmentation."
+        return "Hello, you have landed on the lifestyle host api. To interact with the application, use the POST method."
         
     if request.method == 'POST':                                 
         style = request.form['style'] 
