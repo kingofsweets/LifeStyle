@@ -18,16 +18,6 @@ def index():
 @app.route("/clothes", methods = ['GET', 'POST'])
 def test_api():
     if request.method == 'GET':
-        return "Hello, you have landed on the lifestyle host api. To interact with the application, use the POST method."
-        
-    if request.method == 'POST':                                 
-        style = request.form['style'] 
-        colors = request.form['colors']
-        sizes = request.form['sizes']
-        print = request.form['print']
-
-        
-        
         name = "Спортивный костюм adidas M SERENO TS"
         cost = 6168
         img_link = "https://cdn1.ozone.ru/s3/multimedia-h/wc1200/6099651941.jpg"
@@ -35,6 +25,7 @@ def test_api():
 
             
         return {"name": name, "img_link": img_link,"address": "lol", "cost": cost}
+    
 
 
 
