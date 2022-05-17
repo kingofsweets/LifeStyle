@@ -18,13 +18,14 @@ def index():
 @app.route("/clothes", methods = ['GET', 'POST'])
 def test_api():
     if request.method == 'GET':
-        name = "Спортивный костюм adidas M SERENO TS"
-        cost = 6168
-        img_link = "https://cdn1.ozone.ru/s3/multimedia-h/wc1200/6099651941.jpg"
+        
+        names = "Спортивный костюм adidas M SERENO TS"
+        costs = 6168
+        img_links = "https://cdn1.ozone.ru/s3/multimedia-h/wc1200/6099651941.jpg"
         
 
             
-        return {"name": name, "img_link": img_link,"address": "lol", "cost": cost}
+        return {"data":{"name": [names,names,names,names,names,names,names,names,names], "img_link": [img_links,img_links,img_links,img_links,img_links,img_links,img_links,img_links,img_links,img_links],"address": ["lol","lol","lol","lol","lol","lol","lol","lol","lol","lol",], "cost": [costs,costs,costs,costs,costs,costs,costs,costs,costs,costs,]}}
     
 
 
