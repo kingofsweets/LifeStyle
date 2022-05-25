@@ -23,9 +23,12 @@ def test_api():
         costs = 6168
         img_links = "https://cdn1.ozone.ru/s3/multimedia-h/wc1200/6099651941.jpg"
         
-
-            
-        return {"data":{"name": [names,names,names,names,names,names,names,names,names], "img_link": [img_links,img_links,img_links,img_links,img_links,img_links,img_links,img_links,img_links,img_links],"address": ["lol","lol","lol","lol","lol","lol","lol","lol","lol","lol",], "cost": [costs,costs,costs,costs,costs,costs,costs,costs,costs,costs,]}}
+        objects = []
+        
+        for i in range(9):
+            objects.append({"name":names, "img_link": img_links, "address": "test",  "cost": costs})
+        
+        return {"data": objects}
     
 
 
