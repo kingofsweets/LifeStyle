@@ -9,7 +9,7 @@ import numpy as np
 app = Flask(__name__)
 from time import sleep
 
-data = [
+dataf = [
     {
         "name":'Рубашка Koton',
         "img_link": 'https://cdn1.ozone.ru/s3/multimedia-5/wc1200/6264553745.jpg',
@@ -96,7 +96,7 @@ def test_api():
         
         print(objects[0])
         
-        return {"data": data}
+        return {"data": dataf}
     
 
 
