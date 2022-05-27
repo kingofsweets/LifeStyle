@@ -1,5 +1,3 @@
-from turtle import color
-
 from numpy import size
 from flask import Flask, request, send_file, send_from_directory
 import flask
@@ -7,8 +5,9 @@ import os
 from base64 import b64encode
 from PIL import Image
 import io
+import pandas as pd
+import numpy as np
 app = Flask(__name__)
-
 
       
 @app.route("/", methods=['GET'])
@@ -18,15 +17,14 @@ def index():
 @app.route("/clothes", methods = ['GET', 'POST'])
 def test_api():
     if request.method == 'GET':
-        
-        names = "Спортивный костюм adidas M SERENO TS"
-        costs = 6168
-        img_links = "https://cdn1.ozone.ru/s3/multimedia-h/wc1200/6099651941.jpg"
+        data = pd.read_csv('ozon.csv')
         
         objects = []
-        
+        rand = np.random.randint(0, 3000, 9)
         for i in range(9):
-            objects.append({"name":names, "img_link": img_links, "address": "test",  "cost": costs})
+            objects.append({"name":str(data.loc[[rand[i]]]["title"]), "img_link": str(data.loc[[rand[i]]]["link"]), "address": "test",  "cost": str(data.loc[[rand[i]]]["cost"])})
+        
+        print(objects[0])
         
         return {"data": objects}
     
