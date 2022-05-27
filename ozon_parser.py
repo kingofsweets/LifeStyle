@@ -1,7 +1,7 @@
-import requests
-import json
-import bs4
-import fuzzywuzzy
+# import requests
+# import json
+# import bs4
+# import fuzzywuzzy
 from requests_html import HTMLSession
 import csv
 from time import sleep
@@ -28,7 +28,7 @@ def get_brands(names):
 
 def pars_clothes():
     session = HTMLSession()
-    csv_f = open('ozon_1.csv', 'w')
+    csv_f = open('ozon_test.csv', 'w')
     writer = csv.writer(csv_f)
     
     writer.writerow(["title", "brand", "cost", "link", "sizes"])
@@ -43,18 +43,19 @@ def pars_clothes():
 
             r.html.render()  
 
-            names = r.html.find('.tile-hover-target.i5n > .de0.ed0.de1.e2d.tsBodyL')
-            costs = r.html.find('.p1i > .ui-s2')
-            links = r.html.find('.tile-hover-target.i5n')
-            color = r.html.find('.f6d.df7')
-            sizes = r.html.find('.df8.f8d')
+            names = r.html.find('.tile-hover-target.wi0 > .i8d.d9i.i9d.dj1.tsBodyL.wi0')
+            costs = r.html.find('.ui-t7')
+            links = r.html.find('.tile-hover-target.wi0')
+            img_links = r.html.find('.ui-r3')
+            sizes = r.html.find('.d6k.dk7')
             
             print("Всего элементов: " + str(len(names)), str(len(costs)), str(len(links)), str(len(sizes)))
     
             names = [name.text for name in names]
             costs = [cost.text for cost in costs]
             sizes = [size.text for size in sizes]
-            links = [link.attrs['href'] for link in links]        
+            links = [link.attrs['href'] for link in links]
+            img_links = [link.attrs['href'] for link in img_links]  
             brands = get_brands(names)
     
     

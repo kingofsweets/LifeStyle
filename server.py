@@ -17,12 +17,12 @@ def index():
 @app.route("/clothes", methods = ['GET', 'POST'])
 def test_api():
     if request.method == 'GET':
-        data = pd.read_csv('ozon.csv')
+        data = pd.read_csv('ozon.csv').to_numpy()
         
         objects = []
         rand = np.random.randint(0, 3000, 9)
         for i in range(9):
-            objects.append({"name":str(data.loc[[rand[i]]]["title"]), "img_link": str(data.loc[[rand[i]]]["link"]), "address": "test",  "cost": str(data.loc[[rand[i]]]["cost"])})
+            objects.append({"name":str(data[[rand[i]], 0][0]), "img_link":"https://www.ozon.ru" +  str(data[[rand[i]], 3][0]), "address": "test",  "cost": str(data[[rand[i]], 2][0])})
         
         print(objects[0])
         
