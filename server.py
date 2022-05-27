@@ -1,13 +1,15 @@
-from numpy import size
-from flask import Flask, request, send_file, send_from_directory
-import flask
-import os
+import requests_html
+from requests_html import HTMLSession
+from flask import Flask,request, send_from_directory
 from base64 import b64encode
 from PIL import Image
 import io
+import random
 import pandas as pd
 import numpy as np
 app = Flask(__name__)
+from time import sleep
+
 
       
 @app.route("/", methods=['GET'])
@@ -17,12 +19,24 @@ def index():
 @app.route("/clothes", methods = ['GET', 'POST'])
 def test_api():
     if request.method == 'GET':
+        session = HTMLSession() 
         data = pd.read_csv('ozon.csv').to_numpy()
-        
+        addresess = ['г. Таганрог, пер. Гоголевский, д. 2/2', 'г. Таганрог, ул. Петровская, д. 69',
+                     'г. Таганрог, ул. Бакинская, д. 65', 'г. Таганрог, пл. Мира, д. 7', 'г. Таганрог, ул. Фрунзе, д. 11А',
+                     'г. Таганрог, ул. Дзержинского, д. 165Б']
         objects = []
         rand = np.random.randint(0, 3000, 9)
         for i in range(9):
-            objects.append({"name":str(data[[rand[i]], 0][0]), "img_link":"https://www.ozon.ru" +  str(data[[rand[i]], 3][0]), "address": "test",  "cost": str(data[[rand[i]], 2][0])})
+            # sleep(2)
+            # r = session.get(f'https://www.ozon.ru{data[[rand[i]], 3][0]}')
+            
+            # print(f'https://www.ozon.ru{data[[rand[i]], 3][0]}')
+            # r.html.render()
+            # img_link = r.html.find('[href]')
+            seed = random.randint(0, 4)
+            
+            
+            objects.append({"name":str(data[[rand[i]], 0][0]), "img_link":'https://cdn1.ozone.ru/s3/multimedia-h/wc500/6160404569.jpg', "address": addresess[seed],  "cost": str(data[[rand[i]], 2][0]).split('₽')[0] + '₽'})
         
         print(objects[0])
         
