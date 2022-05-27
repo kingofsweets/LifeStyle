@@ -47,15 +47,15 @@ dataf = [
         "address": 'г. Таганрог, пер. Гоголевский, д. 2/2'
     },
     {
-        "name":"Рубашка O'STIN",
-        "img_link": 'https://cdn1.ozone.ru/s3/multimedia-u/wc1200/6081431094.jpg',
-        "cost": '998₽',
+        "name":"Рубашка Tudors",
+        "img_link": 'https://cdn1.ozone.ru/s3/multimedia-g/wc1200/6265232392.jpg',
+        "cost": '1422₽',
         "address": 'г. Таганрог, ул. Бакинская, д. 65'
     },
     {
-        "name":'Брюки Shopping life',
-        "img_link": 'https://cdn1.ozone.ru/s3/multimedia-o/wc1200/6275231832.jpg',
-        "cost": '1550₽',
+        "name":'Брюки CULT',
+        "img_link": 'https://cdn1.ozone.ru/s3/multimedia-u/wc1200/6256769238.jpg',
+        "cost": '2495₽',
         "address": 'г. Таганрог, пл. Мира, д. 7'
     },
     {
