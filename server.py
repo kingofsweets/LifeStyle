@@ -9,6 +9,64 @@ import numpy as np
 app = Flask(__name__)
 from time import sleep
 
+data = [
+    {
+        "name":'Рубашка Koton',
+        "img_link": 'https://cdn1.ozone.ru/s3/multimedia-5/wc1200/6264553745.jpg',
+        "cost": '809₽',
+        "address": 'г. Таганрог, пер. Гоголевский, д. 2/2'
+    },
+    {
+        "name":'Брюки ТИМ - модная одежда',
+        "img_link": 'https://cdn1.ozone.ru/s3/multimedia-w/wc1200/6287253896.jpg',
+        "cost": '790₽',
+        "address": 'г. Таганрог, пл. Мира, д. 7'
+    },
+    {
+        "name":'Кеды X-Plode',
+        "img_link": 'https://cdn1.ozone.ru/s3/multimedia-a/wc1200/6331868350.jpg',
+        "cost": '1499₽',
+        "address": 'г. Таганрог, пер. Гоголевский, д. 2/2'
+    },
+    {
+        "name":"Рубашка O'STIN",
+        "img_link": 'https://cdn1.ozone.ru/s3/multimedia-u/wc1200/6081431094.jpg',
+        "cost": '998₽',
+        "address": 'г. Таганрог, ул. Бакинская, д. 65'
+    },
+    {
+        "name":'Классические мужские брюки',
+        "img_link": 'https://cdn1.ozone.ru/s3/multimedia-u/wc1200/6119307306.jpg',
+        "cost": '2460₽',
+        "address": 'г. Таганрог, пл. Мира, д. 7'
+    },
+    {
+        "name":'Кеды X-Plode',
+        "img_link": 'https://cdn1.ozone.ru/s3/multimedia-a/wc1200/6331868350.jpg',
+        "cost": '1499₽',
+        "address": 'г. Таганрог, пер. Гоголевский, д. 2/2'
+    },
+    {
+        "name":"Рубашка O'STIN",
+        "img_link": 'https://cdn1.ozone.ru/s3/multimedia-u/wc1200/6081431094.jpg',
+        "cost": '998₽',
+        "address": 'г. Таганрог, ул. Бакинская, д. 65'
+    },
+    {
+        "name":'Брюки летние на резинке',
+        "img_link": 'https://cdn1.ozone.ru/s3/multimedia-q/wc1200/6293030270.jpg',
+        "cost": '2460₽',
+        "address": 'г. Таганрог, пл. Мира, д. 7'
+    },
+    {
+        "name":'Полуботинки Forum99',
+        "img_link": 'https://cdn1.ozone.ru/s3/multimedia-n/wc1200/6280715639.jpg',
+        "cost": '4199₽',
+        "address": 'г. Таганрог, ул. Бакинская, д. 65'
+    }
+    
+]
+
 
       
 @app.route("/", methods=['GET'])
@@ -38,7 +96,7 @@ def test_api():
         
         print(objects[0])
         
-        return {"data": objects}
+        return {"data": data}
     
 
 
