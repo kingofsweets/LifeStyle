@@ -53,9 +53,9 @@ dataf = [
         "address": 'г. Таганрог, ул. Бакинская, д. 65'
     },
     {
-        "name":'Брюки CULT',
-        "img_link": 'https://cdn1.ozone.ru/s3/multimedia-u/wc1200/6256769238.jpg',
-        "cost": '2495₽',
+        "name":'Брюки Modis',
+        "img_link": 'https://cdn1.ozone.ru/s3/multimedia-s/wc1200/6289571068.jpg',
+        "cost": '1299₽',
         "address": 'г. Таганрог, пл. Мира, д. 7'
     },
     {
