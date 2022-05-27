@@ -1,5 +1,4 @@
-import requests_html
-from requests_html import HTMLSession
+
 from flask import Flask,request, send_from_directory
 from base64 import b64encode
 from PIL import Image
@@ -19,7 +18,6 @@ def index():
 @app.route("/clothes", methods = ['GET', 'POST'])
 def test_api():
     if request.method == 'GET':
-        session = HTMLSession() 
         data = pd.read_csv('ozon.csv').to_numpy()
         addresess = ['г. Таганрог, пер. Гоголевский, д. 2/2', 'г. Таганрог, ул. Петровская, д. 69',
                      'г. Таганрог, ул. Бакинская, д. 65', 'г. Таганрог, пл. Мира, д. 7', 'г. Таганрог, ул. Фрунзе, д. 11А',
