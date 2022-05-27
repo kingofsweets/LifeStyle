@@ -53,9 +53,9 @@ dataf = [
         "address": 'г. Таганрог, ул. Бакинская, д. 65'
     },
     {
-        "name":'Брюки летние на резинке',
-        "img_link": 'https://cdn1.ozone.ru/s3/multimedia-q/wc1200/6293030270.jpg',
-        "cost": '2460₽',
+        "name":'Брюки Shopping life',
+        "img_link": 'https://cdn1.ozone.ru/s3/multimedia-o/wc1200/6275231832.jpg',
+        "cost": '1550₽',
         "address": 'г. Таганрог, пл. Мира, д. 7'
     },
     {
